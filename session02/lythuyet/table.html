@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="shortcut icon" href="../images/icon/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- 
+        Table là bảng
+        - Các loại bảng
+         + Các thẻ hay dùng trong bảng
+            - thead: phần đầu
+                + tr: hàng
+                + th: cột
+            - tbody: phần thân
+                + tr: hàng
+                + td: cột
+            - tfoot: phần chân bảng
+                + tr: hàng
+                + td: cột
+            - caption: tiêu đề của bảng
+         + Các thuộc tính property trong bảng
+            - border: độ dày của viền
+            - cellpadding: khoảng cách từ text đến viền của ô
+            - cellspacing: khoảng cách từ viền của cột đến viền của bảng
+            - bgcolor: màu nền của bảng
+            - bordercolor: màu cho đường viền
+            - colspan: gộp các cột lại với nhau
+            - rowspan: gộp các hàng lại với nhau
+    -->
+    <caption>Quản lý học sinh</caption>
+    <table border="1" bgcolor="#999" bordercolor="red" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên lớp</th>
+                <th>Mã lớp học</th>
+                <th>Khóa học</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Java</td>
+                <td>JV11072024</td>
+                <td>Lập trình Java</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>PHP</td>
+                <td>PHP11072024</td>
+                <td>Lập trình PHP</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="3">Tổng số khóa học</th>
+                <td style="text-align: center;">2</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
