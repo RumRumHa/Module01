@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 3</title>
+    <style>
+        .row {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="./baitap3.html">
+        <div class="row">
+            <label for="fullname">Họ và tên:</label><br>
+            <input type="text" name="fullname" id="fullname">
+        </div>
+        <div class="row">
+            <label for="email">Email:</label><br>
+            <input type="email" name="email" id="email">
+        </div>
+        <div class="row">
+            <label for="phone">Số điện thoại:</label><br>
+            <input type="tel" name="phone" id="phone">
+        </div>
+        <div class="row">
+            <label for="gender">Giới tính:</label><br>
+            <input type="radio" name="gender" id="male" checked><label for="male">Nam</label>
+            <input type="radio" name="gender" id="female"><label for="female">Nữ</label>
+        </div>
+        <div class="row">
+            <input type="submit" value="Đăng ký"
+                style="background-color: #fff; border-radius: 4px; border: 1px solid #cdcdcd;">
+        </div>
+    </form>
+</body>
+
+</html>

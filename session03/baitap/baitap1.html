@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1</title>
+    <style>
+        .bai11 {
+            width: 40%;
+            background-color: #d5fffe;
+            margin: auto;
+            padding-top: 10px;
+            padding-left: 20px;
+            padding-right: 15px;
+            padding-bottom: 15px;
+        }
+
+        .bai11 .form {
+            background-color: #ffffff;
+            padding: 5px;
+        }
+
+        .bai11 .row label, .bai12 .row label {
+            color: #0734f8;
+        }
+
+        .col-20 {
+            float: left;
+            width: 20%;
+            margin-top: 10px;
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .col-70 {
+            float: left;
+            width: 70%;
+            margin-top: 10px;
+        }
+
+        .row input, select, textarea {
+            box-shadow: 2px 2px #5e5e5e inset;
+            border: 1px solid #cfcfcf;
+        }
+
+        table label {
+            color: #ff4c01 !important;
+        }
+
+        .button {
+            text-align: center;
+            padding-right: 130px;
+        }
+
+        .button input {
+            padding: 5px 10px;
+            box-shadow: 1px 1px #5e5e5e;
+            border: 0px;
+            background-color: #dcd9d2;
+            margin-left: 6px;
+            margin-top: 8px;
+        }
+
+        .bai12 {
+            background-color: #fffdaa;
+            width: 40%;
+            padding: 5px;
+            margin: auto;
+        }
+
+        .bai12 .caption {
+            background-color: #d4fdd5;
+            color: #0734f8;
+            font-weight: 700;
+            padding: 4px;
+            font-size: 17px;
+        }
+
+        select {
+            appearance: none;
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .select {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 110px;
+            height: 25px;
+            padding-right: 13px;
+        }
+
+        .select::after {
+            content: '\25BC';
+            position: absolute;
+            right: 0;
+            padding: 2px;
+            height: 21px;
+            background-color: #dad8d1;
+            pointer-events: none;
+            box-shadow: -2px -2px #5e5e5e inset, 0 2px #5e5e5e inset;
+            border: 1px solid #cfcfcf;
+        }
+        option {
+            text-align: center;
+        }
+        .bai12 .col-20 {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bai11">
+        <div class="form">
+            <caption>
+                <center style="color: #fff0de; background-color: #ff4c01; padding: 4px;">SỞ THÍCH CỦA BẠN</center>
+            </caption>
+            <form action="./baitap1.html" method="post">
+                <div class="row">
+                    <div class="col-20">
+                        <label for="yourname">Họ và tên</label>
+                    </div>
+                    <div class="col-70">
+                        <input type="text" name="yourname" id="yourname" style="width: 60%;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-20">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="col-70">
+                        <input type="email" name="email" id="email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-20">
+                        <label for="hobbies">Sở thích</label>
+                    </div>
+                    <div class="col-70">
+                        <table style="width: 86%;">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="sports" name="sports" value="Sports">
+                                        <label for="sports"> Thể thao</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="music" name="music" value="Music">
+                                        <label for="music"> Âm nhạc</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="readbook" name="readbook" value="Read a Book">
+                                        <label for="readbook"> Đọc sách</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="web" name="web" value="Web">
+                                        <label for="web"> Lướt web</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="gaming" name="gaming" value="Gaming">
+                                        <label for="gaming"> Chơi game</label>
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" id="film" name="film" value="Film">
+                                        <label for="film"> Điện ảnh</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" id="travel" name="travel" value="Travel">
+                                        <label for="travel"> Du lịch</label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <br>
+                <div class="button">
+                    <input type="submit" value="Gửi thông tin">
+                    <input type="reset" value="Nhập lại">
+                </div>
+            </form>
+        </div>
+    </div><br>
+    <div class="bai12">
+        <div class="caption">
+            <caption>ĐĂNG KÝ HỌC VIÊN</caption>
+        </div>
+        <div class="container">
+            <form action="./login.html" method="post">
+                <div class="row">
+                    <div class="col-20">
+                        <label for="yourname1">Họ và tên</label>
+                    </div>
+                    <div class="col-70">
+                        <input type="text" name="yourname1" id="yourname1" style="width: 60%; height: 20px;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-20">
+                        <label for="birthday">Ngày sinh</label>
+                    </div>
+                    <div class="col-70">
+                        <input type="text" name="birthday" id="birthday" style="width: 40%; height: 20px;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-20">
+                        <label for="yourname1">Giới tính</label>
+                    </div>
+                    <div class="col-70">
+                        <input type="radio" name="gender" id="male" value="Nam" style="box-shadow: none;">
+                        <label for="male" style="color: black;">Nam</label>
+                        <input type="radio" name="gender" id="female" value="Nữ" style="box-shadow: none;">
+                        <label for="female" style="color: black;">Nữ</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-20">
+                        <label for="address">Địa chỉ</label>
+                    </div>
+                    <div class="col-70">
+                        <textarea name="address" id="address" cols="30" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-20">
+                        <label for="class">Lớp</label>
+                    </div>
+                    <div class="col-70">
+                        <div class="select">
+                            <select name="class" id="class">
+                                <option selected disabled>-- Chọn lớp -- </option>
+                                <option value="1A">1A</option>
+                                <option value="1B">1B</option>
+                                <option value="1C">1C</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-20">
+                        <label for="email1">Email</label>
+                    </div>
+                    <div class="col-70">
+                        <input type="email" name="email1" id="email1" style="width: 50%; height: 20px;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-20">
+                        <label for="phone">Điện thoại</label>
+                    </div>
+                    <div class="col-70">
+                        <input type="tel" name="phone" id="phone" style="width: 50%; height: 20px;">
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Đăng ký">
+                    <input type="reset" value="Nhập lại">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
