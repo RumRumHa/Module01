@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 10</title>
+    <link rel="stylesheet" href="../baitap/style.css">
+</head>
+
+<body>
+    <div class="bai10">
+        <div class="billing">
+            <h4>Billing address</h4>
+            <form>
+                <div class="row">
+                    <div class="col-50">
+                        <label for="firstName">First name</label><br>
+                        <input type="text" class="form-control" id="firstName" required>
+                    </div>
+                    <div class="col-50">
+                        <label for="lastName">Last name</label><br>
+                        <input type="text" class="form-control" id="lastName" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="username">Username</label>
+                    <div class="input-user">
+                        <span class="input-text">@</span>
+                        <input type="text" class="form-control" id="username" placeholder="Username" required>
+                    </div>
+                </div>
+                <div class="row row-flex">
+                    <label for="email">Email <span class="text-gray">(Optional)</span></label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                </div>
+                <div class="row row-flex">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                </div>
+                <div class="row row-flex">
+                    <label for="address2">Address 2 <span class="text-gray">(Optional)</span></label>
+                    <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                </div>
+                <div class="row">
+                    <div class="col-40">
+                        <label for="country">Country</label>
+                        <select class="custom-select" id="country" required>
+                            <option value="" disabled selected>Choose...</option>
+                            <option>VietNam</option>
+                            <option>Japan</option>
+                        </select>
+                    </div>
+                    <div class="col-30">
+                        <label for="state">State</label>
+                        <select class="custom-select" id="state" required>
+                            <option value="" disabled selected>Choose...</option>
+                            <option>Ha Noi</option>
+                            <option>Hue</option>
+                            <option>Ho Chi Minh</option>
+                        </select>
+                    </div>
+                    <div class="col-20">
+                        <label for="zip">Zip</label>
+                        <input style="margin-top: 8px; margin-bottom: 16px;" type="text" class="form-control" id="zip"
+                            required>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="custom-checkbox">
+                        <input type="checkbox" class="control-input" id="same-address">
+                        <label class="checkbox-label" for="same-address">Shipping address is the same as my billing
+                            address</label>
+                    </div>
+                    <div class="custom-checkbox">
+                        <input type="checkbox" class="control-input" id="save-info">
+                        <label class="checkbox-label" for="save-info">Save this information for next time</label>
+                    </div>
+                </div>
+                <hr>
+                <h4>Payment</h4>
+                <div class="row">
+                    <div class="custom-radio">
+                        <input id="credit" name="payment-method" type="radio" class="control-input" checked>
+                        <label class="radio-label" for="credit">Credit card</label>
+                    </div>
+                    <div class="custom-radio">
+                        <input id="debit" name="payment-method" type="radio" class="control-input">
+                        <label class="radio-label" for="debit">Debit card</label>
+                    </div>
+                    <div class="custom-radio">
+                        <input id="paypal" name="payment-method" type="radio" class="control-input">
+                        <label class="radio-label" for="paypal">Paypal</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-50">
+                        <label for="name-card" class="card">Name on card</label>
+                        <input type="text" class="form-control" id="name-card" required>
+                        <small class="text-gray">Full name as displayed on card</small>
+                    </div>
+                    <div class="col-50" style="margin-bottom: 32px;">
+                        <label for="card-number" class="card">Credit card number</label>
+                        <input type="text" class="form-control" id="card-number" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="expiration">Expiration</label>
+                        <input type="text" class="form-control" id="expiration" required>
+                    </div>
+                    <div class="col-25">
+                        <label for="cvv">CVV</label>
+                        <input type="text" class="form-control" id="cvv" required>
+                    </div>
+                </div>
+                <hr>
+                <button class="button" type="submit">Continue to checkout</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        h2 {
+            color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        - CSS là gì?
+            + Viết tắt Cascading Style Sheets (ngôn ngữ làm đẹp cho trang web)
+            + Khi viết file CSS thì đuôi phải .css
+        - Nhúng CSS vào các trang web
+            + Có 3 cách để nhúng CSS vào trang web
+            C1: Inline - viết CSS trực tiếp vào thẻ Tag (Element)
+            C2: Internal - viết CSS bên trong cặp thẻ <style></style> đặt ở trong thẻ <head></head>
+            C3: External - viết CSS bên trong file có đuôi .css
+            + Rút ra Ưu điểm Nhược điểm của 3 cách:
+            C1: Inline - nhanh nhưng nó có nhược điểm là khi code nhiều mới học nhìn code dễ rối.
+            C2:Internal - cấu trúc gọn gàng hơn, nhưng có nhược điểm là chỉ mình file html đó dùng được thôi, các file html khác không dùng được.
+            C3: External - viết code css rõ ràng, dễ maintain (chỉnh sửa) và có thể cho các file html khác dùng chung CSS được.
+        - Sử dụng được CSS Selector:
+            + Selector: bộ chọn để CSS
+            + Định danh cho các element
+                class: cách dùng .tênClass
+                    * Đối với Class thì có thể dùng chung được hoặc có thể dùng riêng
+                id: cách dùng #teenId định danh duy nhất
+            + Mức độ ưu tiên ở trong CSS từ thấp đến cao
+                element -- class -- id -- !important
+
+        - Các bộ thuộc tính cơ bản trong CSS:
+            + Bộ thuộc tính màu sắc cho text (color):
+                color: 
+                    - Các giá trị của color
+                        Đặt theo tên tiếng anh (red, blue, green, violet,..)
+                        Đặt theo rgb
+                        Đặt theo rgba (red, green, blue, alpha)
+                        Đặt theo hsl
+                        Đặt theo hsla
+                        Đặt theo hexa #
+            + Bộ thuộc tính font cho text:
+                - font-size: kích cỡ của text
+                - font-weight: độ dày của text
+                - font-family: kiểu chữ
+            + Bộ thuộc tính về căn chỉnh text:
+                - text-align: căn chỉnh vị trí text
+                - text-decoration: bỏ gạch chân, gạch ngang text
+                - text-transform
+            + Bộ thuộc tính về background:
+                - background-color: màu nền
+                - background-image: url("") màu nền ảnh
+                - background-position
+                - background-size:
+                - background-repeat: lặp lại ảnh
+            + Bộ thuộc tính display:
+                - display: none; : biến mất
+                - display: block; : Khối 
+                - display: inline; : dòng
+                - display: inline-block;
+        - Giải thích được Box Model
+        - Trình bày được mô hình hộp (Box Model) trong CSS:
+            + content: nội dung của box
+            + padding: khoảng cách từ border đến content
+            + margin: khoảng cách giữa các element
+            + border: độ dày của viền
+        - Sử dụng được CSS để điều chỉnh kích thước các thành phần
+        - Sử dụng được CSS tạo layout đơn giản
+
+    -->
+    
+    <h1 style="color:brown">CSS Basic</h1>
+    <h2>CSS Internal</h2>
+    <h3 class="heading1" id="content1">CSS External</h3>
+    <h3>Lorem, ipsum dolor.</h3>
+
+    <div class="main1">Content 1</div>
+    <div class="main2">Content 2</div>
+
+    <button class="btn login">Login</button>
+    <button class="btn register">Register</button>
+    <div class="main">
+        <div class="main__product-hot">
+            <!-- danh sách sản phẩm hot -->
+        </div>
+        <div class="main__products">
+            <!-- danh sách sản phẩm -->
+        </div>
+    </div>
+
+    <h6 class="study-code" id="study">Học lập trình tại RikkeiAcademy</h6>
+    <div class="container">
+        <p>Xin chào!</p>
+    </div>
+    <p>Tạm biệt!</p>
+
+    <h5>Css basic!</h5>
+    <section>CSS BASIC</section>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci porro delectus optio ullam, alias culpa deserunt eaque tempore totam excepturi deleniti neque atque officia pariatur quos praesentium earum dolore. Ipsa.</p>
+
+    <a href="">contact</a>
+    <div class="transform">text transform</div>
+
+    <h1 class="image">Backgound Image</h1>
+
+    <p class="none">Giá trị của thuộc tính display: none</p>
+    <div class="block">Giá trị của thuộc tính display: block</div>
+    <p class="inline-block">Giá trị của thuộc tính display: inline-block</p>
+
+    <div class="box-model">Box model</div>
+</body>
+</html>
