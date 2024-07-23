@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation: Chuyển động</title>
+    <style>
+        .animation {
+            width: 60px;
+            height: 60px;
+            background-color: gray;
+            border: 10px solid orangered;
+            border-radius: 50%;
+            margin: auto;
+            border-right: 10px solid greenyellow;
+            border-left: 10px solid violet;
+            border-bottom: 10px solid blue;
+            animation: cycle 1s infinite 2s ease-in-out;
+        }
+        @keyframes cycle {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animation">
+        Animation
+    </div>
+</body>
+</html>

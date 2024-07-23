@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition</title>
+    <style>
+        .login {
+            width: 80px;
+            height: 40px;
+            background-color: yellowgreen;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            transition: all 1s linear;
+        }
+        .login:hover {
+            background-color: blueviolet;
+            width: 60px;
+        }
+        .login:focus {
+            position: absolute;
+            left: 200px;
+            bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button class="login">Login</button>
+</body>
+</html>
