@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Web Design</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .responsive {
+            background-color: red;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .responsive {
+                background-color: green;
+            }
+        }
+
+        @media only screen and (max-width: 992px) {
+            .responsive {
+                background-color: orange;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .responsive {
+                background-color: violet;
+            }
+        }
+
+        @media only screen and (max-width: 640px) {
+            .responsive {
+                background-color: blue;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .responsive {
+                background-color: yellowgreen;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 
+        RWD = responsive web design: thiết kế trang web tương thích với các màn hình khác nhau
+        Cách responsive
+        1. Breakpoint
+            320px - 480px: Màn hình cho các thiết bị smartphone nhỏ
+            480px - 640px: smartphone vừa
+            640px - 768px: tablet nhỏ
+            768px - 992px: tablet vừa
+            992px - 1200px: tablet lớn
+            > 1200px: màn hình máy tính
+        2. Thiết kế rwd theo kiểu mobile first (ưu tiên điện thoại trước)
+        3. Thiết kế rwd theo kiểu desktop first (ưu tiên máy tính trước)
+            - Tức là sẽ code trên giao diện máy tính trước rồi sau đó mình sẽ đi thiết kế tương thích với các màn hình máy tính bảng rồi xuống điện thoại sau.
+            @media screen and (max-width: )
+    -->
+
+    <div class="responsive">Responsive</div>
+</body>
+
+</html>
