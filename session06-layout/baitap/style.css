@@ -553,46 +553,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 250px;
-    left: 16px;
+    position: relative;
+    top: 16px;
+    right: 16px;
 }
 .bai10 .body-container .icon {
-    position: absolute;
-    right: 52px;
-    bottom: 237px;
+    position: relative;
+    float: right;
+    right: 16px;
+    bottom: 48px;
 }
 .bai10 .body-container .icon i {
-    padding-left: 10px;
-    cursor: pointer;
-}
-.bai10 .body-container1 .content1 {
-    height: 56px;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    text-indent: 20px;
-    border-radius: 4px;
-}
-.bai10 .body-container1 .score {
-    background-color: #e2658f;
-    color: #fff;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 174px;
-    left: 16px;
-}
-.bai10 .body-container1 .icon {
-    position: absolute;
-    right: 52px;
-    bottom: 160px;
-}
-.bai10 .body-container1 .icon i {
     padding-left: 10px;
     cursor: pointer;
 }
