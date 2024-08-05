@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 8</title>
+</head>
+
+<body>
+    <script>
+        let a = prompt("Nhập số nguyên dương a:");
+        let b = prompt("Nhập số nguyên dương b:");
+        a = parseInt(a);
+        b = parseInt(b);
+        if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0 || b > a) {
+            console.log("Vui lòng nhập lại!");
+        } else {
+            let i = 1;
+            while (a >= i) {
+                if (i % b === 0) {
+                    console.log(i);
+                }
+                i++;
+            }
+        }
+    </script>
+</body>
+
+</html>

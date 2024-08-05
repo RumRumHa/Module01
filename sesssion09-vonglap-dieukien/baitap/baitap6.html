@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 6</title>
+</head>
+<body>
+    <script>
+        var number = prompt("Nhập số nguyên dương bất kỳ:");
+        number = parseInt(number);
+        if (isNaN(number) || number <= 0) {
+            console.log("Vui lòng nhập số nguyên dương hợp lệ!");
+        } else {
+            let result = 1;
+            for (let i = 1; i <= number; i++) {
+                result*=i
+            }
+            console.log(`Giai thừa của ${number} là ${result}`);
+        }
+    </script>
+</body>
+</html>

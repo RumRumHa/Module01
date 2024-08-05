@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1</title>
+</head>
+<body>
+    <script>
+        let year = +prompt('Bạn sinh năm bao nhiêu?');
+        if (!isNaN(year)) {
+            let currentYear = new Date().getFullYear();
+            let age = currentYear - year;
+            console.log("Tuổi của bạn là: ", age);
+        } else {
+            console.log("Giá trị không hợp lệ");
+        }
+    </script>
+</body>
+</html>

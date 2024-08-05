@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 2</title>
+</head>
+<body>
+    <script>
+        let input = prompt("Nhập số bất kỳ: ");
+        if (/^-?\d+$/.test(input)) {
+            let number = BigInt(input);
+            number = number % 10n;
+            if (number%2n==0) {
+                console.log("Số bạn nhập là số chẵn");
+            } else {
+                console.log("Số bạn nhập là số lẻ");
+            }
+        } else {
+            console.log("Không hợp lệ");
+        }
+    </script>
+</body>
+</html>
