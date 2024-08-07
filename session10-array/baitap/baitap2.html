@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 2</title>
+</head>
+
+<body>
+    <script>
+        let students = ["Hoa", "Lan", "Huệ", "Hồng", "Hoa", "Minh", "Nam"];
+        let valueName = prompt("Mời nhập tên cần tìm kiếm: ");
+        let result = [];
+        
+        for (let i = 0; i < students.length; i++) {
+            if (students[i] == valueName) {
+                result.push(i+1);
+            }
+        }
+        
+        if (result.length > 0) {
+            console.log( `Tên ${valueName} xuất hiện trong mảng tại vị trí thứ ${result.join(", ")}`);
+        } else {
+            console.log("Phần tử không tồn tại"); 
+        }    
+    </script>
+</body>
+
+</html>

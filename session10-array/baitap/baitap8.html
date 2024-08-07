@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 8</title>
+</head>
+
+<body>
+    <script>
+        let numbers = [1, 2, 4, 5, 6, 10, 25, 3, 54, 54, 3, 6, 2, 1, 4, 6, 8, 10, 7, 9];
+        const length = numbers.length;
+        let result = [];
+        let phanTuDaKiemTra = [];
+
+        for (let i = 0; i < length; i++) {
+            let count = 0;
+            let currentNumber = numbers[i];
+            if (phanTuDaKiemTra.includes(currentNumber)) continue;
+
+            for (let j = 0; j < length; j++) {
+                if (currentNumber == numbers[j]) {
+                    count++;
+                }
+            }
+
+            if (count >= 2) {
+                result.push(currentNumber);
+                phanTuDaKiemTra.push(currentNumber);
+            }
+        }
+        console.log("Mảng các phần tử xuất hiện từ 2 lần trở lên: ", result);        
+    </script>
+</body>
+
+</html>

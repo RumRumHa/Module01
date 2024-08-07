@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <script>
+        // Khai báo mảng chứa danh sách sinh viên
+        let students = ["Hoa", "Hồng", "Lan", "Huệ"];
+
+        console.log("Số phần tử trong mảng:", students.length);
+
+
+        let numbers = [];
+        // Thêm phần tử vào trong mảng
+        /*
+            1. Dùng phương thức push();
+        */
+        numbers.push(1, 2, 3);
+        //muốn thêm vào đầu mảng thì sử dụng unshift()
+        numbers.unshift(0);
+        //thêm vào vị trí bất kỳ
+        numbers.splice(2, 0, 9, 6);
+        console.log(numbers);
+
+        for (let i = 0; i < numbers.length; i++) {
+            console.log(`Phần tử vị trí thứ ${i + 1} là ${numbers[i]}`);
+        }
+
+        for (const key in numbers) {
+            console.log(numbers[key]);    
+        }
+        for (const element of numbers) {
+            console.log(element);
+        }
+
+        let numbers1 = [1, 3, 5];
+        for (let i = 0; i < numbers1.length; i++) {
+            document.write(numbers1[i]);
+            document.write("<br>");
+        }
+    </script>
+</body>
+
+</html>

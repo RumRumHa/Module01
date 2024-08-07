@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 4</title>
+</head>
+<body>
+    <script>
+        let a = +prompt("Nhập số nguyên dương a:");
+        let b = +prompt("Nhập số nguyên dương b:");
+        let array = [];
+        if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) {
+            console.log("Vui lòng nhập số nguyên dương hợp lệ!");
+        } else if (a >= b) {
+            for (let i = 1; i <= a; i++) {
+                if (i % b == 0) {
+                    array.push(i);
+                }
+            }
+        } else if (a < b) {
+            for (let i = 1; i <= b; i++) {
+                if (i % a == 0) {
+                    array.push(i);
+                }
+            }
+        }
+        if (array.length > 0) {
+            console.log("Mảng cần tìm là: ", array);
+        }        
+    </script>
+</body>
+</html>

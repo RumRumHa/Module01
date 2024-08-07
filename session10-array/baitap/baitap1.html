@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1</title>
+</head>
+<body>
+    <script>
+        let array = [1, 3, 'a', 'Red', "10", null, 4.2, 0];
+        let integers = [];
+        for (let i = 0; i < array.length; i++) {
+            let value = array[i];
+            if (typeof value === 'number' && Number.isInteger(value)) {
+                integers.push(value);
+            }
+        }
+        if (integers.length > 0) {
+            console.log('Các số nguyên trong mảng là:', integers);
+        } else {
+            console.log('Trong mảng không tồn tại số nguyên');            
+        }
+    </script>
+</body>
+</html>

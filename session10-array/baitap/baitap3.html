@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 3</title>
+</head>
+<body>
+    <script>
+        let numbers = [1,2,4,5,7,6,43,2,4,6,7,4,2,1,2,4,5,7,4,3,2,0];
+        let valueNum = prompt("Mời nhập số nguyên bất kỳ:");
+        let count = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            if (valueNum == numbers[i]) {
+                count++;
+            }           
+        }
+        console.log(`Số nguyên ${valueNum} xuất hiện ${count} lần`); 
+    </script>    
+</body>
+</html>
