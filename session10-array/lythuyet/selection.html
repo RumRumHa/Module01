@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection</title>
+</head>
+<body>
+    <!-- 
+        Thuật toán sắp xếp Selection Sort
+    -->
+    <script>
+        let numbers = [7,3,2,5,6,8,1,9,4];
+        for (let i = 0; i < numbers.length; i++) {
+            let index = i;
+            for (let j = i+1; j < numbers.length; j++) {
+                //đi tìm số nhỏ nhất
+                if (numbers[j] < numbers[index]) {
+                    index = j;
+                }
+            }
+            // Kiểm tra xem vị trí i có khác index hay không
+            if (i != index) {
+                let temp = numbers[i];
+                numbers[i] = numbers[index];
+                numbers[index] = temp;
+            }
+        }
+        console.log(numbers);
+        
+    </script>
+</body>
+</html>

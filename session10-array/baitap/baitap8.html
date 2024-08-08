@@ -14,22 +14,32 @@
         let result = [];
         let phanTuDaKiemTra = [];
 
-        for (let i = 0; i < length; i++) {
-            let count = 0;
-            let currentNumber = numbers[i];
-            if (phanTuDaKiemTra.includes(currentNumber)) continue;
+        //cách 1
+        // for (let i = 0; i < length; i++) {
+        //     let count = 0;
+        //     let currentNumber = numbers[i];
+        //     if (phanTuDaKiemTra.includes(currentNumber)) continue;
+        //     for (let j = 0; j < length; j++) {
+        //         if (currentNumber == numbers[j]) {
+        //             count++;
+        //         }
+        //     }
+        //     if (count >= 2) {
+        //         result.push(currentNumber);
+        //         phanTuDaKiemTra.push(currentNumber);
+        //     }
+        // }
 
-            for (let j = 0; j < length; j++) {
-                if (currentNumber == numbers[j]) {
-                    count++;
+        //Cách 2
+        numbers.sort((a, b) => a - b);
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] == numbers[i + 1]) {
+                if (!result.includes(numbers[i])) {
+                    result.push(numbers[i]);
                 }
             }
-
-            if (count >= 2) {
-                result.push(currentNumber);
-                phanTuDaKiemTra.push(currentNumber);
-            }
         }
+
         console.log("Mảng các phần tử xuất hiện từ 2 lần trở lên: ", result);        
     </script>
 </body>
