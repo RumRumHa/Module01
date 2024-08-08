@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 2</title>
+</head>
+<body>
+    <script>
+        let numbers = prompt("Nhập các số bất kỳ:");
+        let result = numbers[0];
+        for (let i = 1; i < numbers.length; i++) {
+            let char = numbers[i-1];
+            let currentNumber = numbers[i];
+            if (char%2 == 0 && currentNumber%2 == 0) {
+                result += '-';
+            }
+            result += currentNumber;
+        }
+        console.log("Chuỗi cần tìm là: ", result);        
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 5</title>
+</head>
+<body>
+    <script>
+        let numbers = [1,5,8,7,9,6,5,41,2,6,55,4,8];
+        // for (let i = 0; i < numbers.length; i++) {
+        //     let index = i;
+        //     for (let j = i+1; j < numbers.length; j++) {
+        //         if (numbers[j] < numbers[index]) {
+        //             index = j;
+        //         }
+        //     }
+        //     if (numbers[index] != numbers[i]) {
+        //         let temp = numbers[i];
+        //         numbers[i] = numbers[index];
+        //         numbers[index] = temp;
+        //     }
+        // }
+
+        //Cách 2
+        numbers.sort((a,b)=> a - b);
+        console.log("Mảng sau khi sắp xếp: ", numbers);                
+    </script>
+</body>
+</html>
