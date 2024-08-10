@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 4-1</title>
+</head>
+<body>
+    <script>
+        let string = prompt("Nhập vào chuỗi cần chuyển: ");
+        let words = string.toLowerCase().split(' ');
+        let result = '';
+        for (let i = 0; i < words.length; i++) {
+            let word = words[i];
+            let transformed = word[0].toUpperCase() + word.slice(1);            
+            result += transformed + " ";
+        }
+        result = result.trim();
+        console.log("Chuỗi sau khi chuyển là:", result);  
+    </script>
+</body>
+</html>
