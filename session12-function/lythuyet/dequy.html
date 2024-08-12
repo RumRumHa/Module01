@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đệ quy</title>
+</head>
+<body>
+    <script>
+        // đệ quy: hàm tự gọi lại chính nó
+        // function nhập vào số n và tính tổng các số từ 1 -> n
+        function sum(a) {
+            if (a === 1) {
+                return 1;
+            }
+            return a+sum(--a);
+        }
+        console.log(sum(9));
+    </script>
+</body>
+</html>

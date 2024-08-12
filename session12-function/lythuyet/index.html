@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <!-- 
+        1. Function Declaration: (function bình thường)
+            - Cách khai báo hàm
+            - Cách dùng hàm
+                + Hàm được thực thi khi gọi hàm.
+        2. Arrow function (hàm mũi tên)
+            - Cách khai báo hàm
+            - Cách dùng hàm
+        3. Hàm ẩn danh
+            - Cách khai báo hàm
+            - Cách dùng hàm
+    -->
+    <script>
+        function sayHello() {
+            console.log("Xin chào");            
+        }
+        sayHello(); //gọi hàm
+
+        //arrow function
+        let result = ()=> {
+            console.log("Arrow function");            
+        }
+        result();
+
+        //Hàm ẩn danh (anonymous function)
+        let sum = function () {
+            console.log("Hàm ẩn danh");            
+        }
+        sum();
+
+        // Hàm IIFE
+        (function () {
+            console.log("Function IIFE");            
+        })();
+        (function () {
+            console.log("Hello 1");            
+        })();
+        (function () {
+            console.log("Hello 2");            
+        })();
+
+        // Tham số, đối số trong hàm
+        // Đối số: Khi gọi hàm thì truyến giá trị vào
+        // Tham số: Khi khai báo hàm khởi tạo tham số ()
+    </script>
+</body>
+</html>

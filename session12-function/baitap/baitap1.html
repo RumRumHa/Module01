@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1</title>
+</head>
+<body>
+    <script>
+        let a = +prompt("Nhập số a:");
+        let b = +prompt("Nhập số b:");
+        let c = +prompt("Nhập số c:");
+        let array = [a,b,c];
+        function min() {
+            array.sort((a,b) => a - b);
+            console.log("Số bé nhất trong 3 số là: ",array[0]);            
+        }
+        min();
+    </script>
+</body>
+</html>

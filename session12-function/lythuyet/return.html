@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return</title>
+</head>
+
+<body>
+    <script>
+        //return
+        // Giúp dừng việc thực thi trong hàm
+        // Tức là gặp return hàm không chạy nữa
+        function returnF() {
+            if (5 === "5") {
+                return;
+            }
+            console.log("1111");
+        }
+        returnF();
+        /**
+         * Giả sử đăng nhập
+         * tk
+         * mk
+         * hệ thống 1000 user
+        */
+        function tinhTong() {
+            return 5;
+        }
+        let result = tinhTong();
+        console.log(result);           
+    </script>
+</body>
+
+</html>

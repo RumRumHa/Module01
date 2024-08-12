@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+    <script>
+        let sdt;
+        function xinSdt(callback) {
+            //Nhật gọi cho Hương xin số Tùng
+            console.log("Nhật gọi cho hương xin số tùng");
+            console.log("Hương bảo đợi tí");
+            setTimeout(() => {
+                sdt = 1111222;
+                callback(sdt);
+            }, 2000);
+            
+        } 
+        
+        function goiKhiCoSo(phone) {
+            console.log(`Nhật gọi cho tùng theo số ${phone}`);            
+        }
+        xinSdt(goiKhiCoSo);  
+    </script>
+</body>
+</html>

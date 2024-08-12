@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 2</title>
+</head>
+<body>
+    <script>
+        function soNguyenTo(number) {
+            if (number <= 1) {
+                return `Số ${number} không phải là số nguyên tố`;
+            }
+            for (let i = 2; i < Math.sqrt(number); i++) {
+                if (number%i == 0) {
+                    return `Số ${number} không phải là số nguyên tố`;
+                }
+            }
+            return `Số ${number} là số nguyên tố`;  
+        }
+        console.log(soNguyenTo(66));
+    </script>
+</body>
+</html>
