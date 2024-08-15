@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 10</title>
+</head>
+
+<body>
+    <script>
+        function Product(name, price, quantity) {
+            this.name = name;
+            this.price = price;
+            this.quantity = quantity;
+        }
+        let shoppingCart = [];
+
+        function addToCart(productName, price, quantity) {
+            let existingProduct = shoppingCart.find(product => product.name === productName);
+
+            if (existingProduct) {
+                existingProduct.quantity += quantity;
+            } else {
+                let newProduct = new Product(productName, price, quantity);
+                shoppingCart.push(newProduct);
+            }
+            console.log("Sản phẩm đã được thêm vào giỏ hàng.");
+        }
+
+        function removeFromCart(productName) {
+            let index = shoppingCart.findIndex(product => product.name === productName);
+            if (index != -1) {
+                shoppingCart.splice(index, 1);
+                console.log("Sản phẩm đã được xóa khỏi giỏ hàng");
+            } else {
+                console.log("Không tìm thấy sản phẩm");
+            }
+        }
+
+        function calculateTotal() {
+            let total = shoppingCart.reduce((sum, product) => sum + (product.price * product.quantity), 0);
+            console.log(`Tổng giá trị của giỏ hàng: ${total}`);
+        }
+
+        function displayCart() {
+            if (shoppingCart.length === 0) {
+                console.log("Giỏ hàng đang trống.");
+                return;
+            }
+            shoppingCart.forEach(product => {
+                console.log(`Tên sản phẩm: ${product.name}, Giá: ${product.price}, Số lượng: ${product.quantity}, Tổng giá: ${(product.price * product.quantity)}`);
+            });
+        }
+
+        function clearCart() {
+            shoppingCart = [];
+        }
+
+        addToCart("IPhone 14", 20000000, 1);
+        addToCart("Ring", 1000000, 2);
+        addToCart("Cap", 50000, 1);
+        displayCart();
+        calculateTotal();
+        removeFromCart("Cap");
+        displayCart();
+    </script>
+</body>
+
+</html>

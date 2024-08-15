@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 5</title>
+</head>
+<body>
+    <script>
+        let books = [
+            {
+                author: "Nguyễn Văn A",
+                name: "Toán 1"
+            },
+            {
+                author: "Nguyễn Văn B",
+                name: "Tiếng Việt 1"
+            },
+            {
+                author: "Nguyễn Thị C",
+                name: "Toán 2"
+            },
+            {
+                author: "Trần Ngọc D",
+                name: "Tiếng Việt 2"
+            },
+            {
+                author: "Đỗ E",
+                name: "Toán 3"
+            },
+            {
+                author: "Nguyễn Văn B",
+                name: "Tiếng Việt 3"
+            },
+        ];
+        let auth = prompt("Nhập tên tác giả: ");
+        let bookName = [];
+        function findAuth() {
+            for (let i = 0; i < books.length; i++) {
+                if (books[i].author.toLowerCase() === auth.toLowerCase()) {
+                    bookName.push(books[i].name);                    
+                }
+            }
+            if (bookName.length > 0) {
+                console.log("Tên sách bạn cần tìm là:");
+                bookName.forEach(name => {
+                    console.log(name);                    
+                });                
+            } else {
+                console.log("Không tìm thấy sách");
+            }
+        }
+        findAuth();
+    </script>
+</body>
+</html>

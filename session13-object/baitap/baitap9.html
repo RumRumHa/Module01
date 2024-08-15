@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 9</title>
+</head>
+
+<body>
+    <script>
+        function Contact(name, phone, email) {
+            this.name = name;
+            this.phone = phone;
+            this.email = email;
+        }
+        let contacts = [];
+
+        function addContact(name, phone, email) {
+            let newContact = new Contact(name, phone, email);
+            contacts.push(newContact);
+            console.log("Liên lạc đã được thêm");
+        }
+
+        function findContactByName(name) {
+            let contactName = contacts.find(contactName => contactName.name == name);
+            if (contactName) {
+                console.log(`Thông tin liên lạc là: Tên: ${contactName.name}, Số điện thoại: ${contactName.phone}, Email: ${contactName.email}`);
+            } else {
+                console.log("Không tìm thấy liên hệ");
+            }
+        }
+
+        function displayContacts() {
+            if (contacts.length === 0) {
+                console.log("Danh bạ trống.");
+                return;
+            }
+
+            console.log("Danh sách liên lạc:");
+            contacts.forEach(contact => {
+                console.log(`Tên: ${contact.name}, Số điện thoại: ${contact.phone}, Email: ${contact.email}`);
+            });
+        }
+
+        function deleteContactByName(name) {
+            let index = contacts.findIndex(contact => contact.name == name);
+            if (index != -1) {
+                contacts.splice(index, 1);
+                console.log("Liên lạc đã được xóa.");
+            } else {
+                console.log("Không tìm thấy liên hệ.");
+            }
+        }
+
+        function updateContactByName(name, updatedInfo) {
+            let contact = contacts.find(contact => contact.name == name);
+            if (contact) {
+                contact.name = updatedInfo.name || contact.name;
+                contact.phone = updatedInfo.phone || contact.phone;
+                contact.email = updatedInfo.email || contact.email;
+                console.log("Thông tin liên lạc đã được cập nhật.");
+            } else {
+                console.log("Không tìm thấy liên hệ.");
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

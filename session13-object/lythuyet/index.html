@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        //c1: dùng let, var, const
+        let student = {};
+        //c2: 
+        let cat = new Object();
+        //c3: hàm tạo constructor
+        // function Student(name, age, id, address) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.id = id;
+        //     this.address = address;
+        // }
+        // let std1 = new Student("Minh Thu", 20, 112, "Hà Nội");
+        // let std2 = new Student("Hồng Vân", 21, 111, "Hà Nội")
+        //console.log(std1); 
+        
+        //c4 dùng class
+        class Student {
+            constructor(id, name, age, address, gender) {
+                this.id = id;
+                this.name = name;
+                this.age = age;
+                this.address = address;
+                this.gender = gender;
+            }
+            //khai báo định nghĩa các phương thức
+            sayHello = () => {
+                console.log("Xin chào");                
+            }
+            getName = () => {
+                return this.name;
+            }
+            setName = (name) => {
+                this.name = name;
+            }
+        }
+        let std3 = new Student(1,"Lan", 22, "Hà Nội", "Female");
+        std3.setName("Hoa");
+        console.log(std3);        
+    </script>
+</body>
+</html>

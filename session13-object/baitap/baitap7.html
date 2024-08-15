@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 7</title>
+</head>
+
+<body>
+    <script>
+        let users = [];
+        function isEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+
+        function isPassword(password) {
+            return password.length >= 8;
+        }
+
+        function getUser() {
+            let id, user_name, email, password;
+
+            while (true) {
+                id = prompt("Nhập ID:");
+                user_name = prompt("Nhập tên người dùng:");
+                email = prompt("Nhập email:");
+                password = prompt("Nhập mật khẩu:");
+
+                if (!user_name || user_name.length < 3) {
+                    alert("Tên không được để trống và không được ngắn hơn 3 ký tự");
+                } else if (!email || !isEmail(email)) {
+                    alert("Vui lòng nhập lại email hợp lệ");
+                } else if (!password || !isPassword(password)) {
+                    alert("Mật khẩu không được để trống và tối thiểu 8 ký tự");
+                } else {
+                    users.push({
+                        id: id,
+                        user_name: user_name,
+                        email: email,
+                        password: password
+                    });
+                    alert("Thêm người dùng thành công");
+                    console.log(users);
+                    break;
+                }
+            }
+        }
+        getUser();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 6</title>
+</head>
+
+<body>
+    <script>
+        let products = [
+            {
+                id: 1,
+                product_name: 'IPhone 12',
+                price: 20000000
+            },
+            {
+                id: 2,
+                product_name: 'IPhone 15',
+                price: 30000000
+            },
+            {
+                id: 3,
+                product_name: 'IPhone 11',
+                price: 18000000
+            },
+            {
+                id: 4,
+                product_name: 'IPhone 13',
+                price: 23000000
+            },
+        ];
+        function sortByPrice() {
+            products.sort((a,b) => a.price - b.price);
+            console.log("Danh sách product theo giá tăng dần: ");
+            console.log(products);            
+        }
+        sortByPrice();
+    </script>
+</body>
+
+</html>

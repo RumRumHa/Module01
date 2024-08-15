@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1</title>
+</head>
+<body>
+    <script>
+        let information = {
+            id: '',
+            name: '',
+            phone: '',
+            address: ''
+        };
+        function getUser() {
+            information.id = prompt("Nhập ID:");
+            information.name = prompt("Nhập tên:");
+            information.phone = prompt("Nhập số điện thoại:");
+            information.address = prompt("Nhập địa chỉ: ");
+        }
+        function print() {
+            console.log(`ID: ${information.id}`);
+            console.log(`Name: ${information.name}`);
+            console.log(`Phone: ${information.phone}`);
+            console.log(`Address: ${information.address}`);
+        }
+        getUser();
+        print();
+    </script>
+</body>
+</html>

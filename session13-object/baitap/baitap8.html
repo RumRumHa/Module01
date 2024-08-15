@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 8</title>
+</head>
+
+<body>
+    <script>
+        let users = [];
+        function isEmail(email) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(email);
+        }
+        function isPassword(password) {
+            return password.length >= 8;
+        }
+        function registerUser() {
+            let id, user_name, email, password;
+            let emailExists = false;
+
+            while (true) {
+                id = prompt("Nhập ID:");
+                user_name = prompt("Nhập tên người dùng:");
+                email = prompt("Nhập email:");
+                password = prompt("Nhập mật khẩu:");
+
+                emailExists = users.some(user => user.email === email);
+                if (!user_name) {
+                    alert("Tên không được để trống");
+                } else if (!isEmail(email)) {
+                    alert("Email không hợp lệ");
+                } else if (!isPassword(password)) {
+                    alert("Mật khẩu phải dài tối thiểu 8 ký tự");
+                } else if (emailExists) {
+                    alert("Email đã tồn tại");
+                } else {
+                    users.push({
+                        id: id,
+                        user_name: user_name,
+                        email: email,
+                        password: password
+                    });
+                    alert("Đăng ký thành công");
+                    console.log((users));
+                    break;
+                }
+            }
+        }
+
+        function loginUser() {
+            let email, password;
+            while (true) {
+                email = prompt("Nhập email:");
+                password = prompt("Nhập mật khẩu:");
+                if (!email || !password) {
+                    alert("Email và mật khẩu không được để trống");
+                    continue;
+                }
+
+                let user = users.find(user => user.email === email && user.password === password);
+
+                if (user) {
+                    alert("Đăng nhập thành công");
+                    console.log("Thông tin tài khoản:", user);
+                    break;
+                } else {
+                    alert("Đăng nhập thất bại");
+                }
+            }
+        }
+
+        function main() {
+            while (true) {
+                let choice = prompt("Chọn chức năng:");
+                if (choice == 1) {
+                    registerUser();
+                } else if (choice == 2) {
+                    loginUser();
+                } else if (choice == 3) {
+                    alert("Thoát chương trình");
+                    break;
+                } else {
+                    alert("Vui lòng chọn lại");
+                }
+            }
+        }
+        main();
+    </script>
+</body>
+
+</html>

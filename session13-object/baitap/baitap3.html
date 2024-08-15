@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 3</title>
+</head>
+
+<body>
+    <script>
+        let students = [];
+        function getStudent() {
+            let numberStudents = prompt("Nhập số lượng sinh viên:");
+            for (let i = 0; i < numberStudents; i++) {
+                let student = {};
+                student.id = prompt(`Nhập ID của sinh viên thứ ${i+1}:`);
+                student.name = prompt(`Nhập tên của sinh viên thứ ${i+1}`);
+
+                students.push(student);
+            }
+        }
+        
+        getStudent();
+        console.log(students);
+    </script>
+</body>
+
+</html>

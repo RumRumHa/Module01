@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property</title>
+</head>
+<body>
+    <script>
+        let student = {
+            name: "Hồng Lan",
+            age: 20,
+            address: "Hà Nội",
+            sayHello: () => {
+                console.log("Xin chào");                
+            }
+        }
+        student.gender = "Female";
+        student["email"] = "lan@gmail.com";
+
+        student.name = "Hoa";
+        delete student.age;
+        //in ra các giá trị thuộc tính
+        for (const key in student) {
+            console.log("key", student[key]);            
+        }
+
+        let student1 = {name: "Alice", age: 30, city: "Hà Nội"}
+            let { city, ...newPerson } = student1;
+            console.log(student1);
+            console.log(newPerson);            
+    </script>
+</body>
+</html>
