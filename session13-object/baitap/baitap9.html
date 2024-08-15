@@ -33,7 +33,7 @@
 
         function displayContacts() {
             if (contacts.length === 0) {
-                console.log("Danh bạ trống.");
+                console.log("Danh bạ trống");
                 return;
             }
 
@@ -47,9 +47,9 @@
             let index = contacts.findIndex(contact => contact.name == name);
             if (index != -1) {
                 contacts.splice(index, 1);
-                console.log("Liên lạc đã được xóa.");
+                console.log("Liên lạc đã được xóa");
             } else {
-                console.log("Không tìm thấy liên hệ.");
+                console.log("Không tìm thấy liên hệ");
             }
         }
 
@@ -59,12 +59,20 @@
                 contact.name = updatedInfo.name || contact.name;
                 contact.phone = updatedInfo.phone || contact.phone;
                 contact.email = updatedInfo.email || contact.email;
-                console.log("Thông tin liên lạc đã được cập nhật.");
+                console.log("Thông tin liên lạc đã được cập nhật");
             } else {
-                console.log("Không tìm thấy liên hệ.");
+                console.log("Không tìm thấy liên hệ");
             }
         }
-        
+
+        addContact("Nguyễn Văn A", "0321313231", "a@gmail.com");
+        addContact("Nguyễn Văn B", "1321131321", "b@gmail.com");
+        addContact("Nguyễn Thị C", "1321312", "c@gmail.com");
+        findContactByName("Nguyễn Văn A");
+        displayContacts();
+        deleteContactByName("Nguyễn Văn B");
+        updateContactByName("Nguyễn Thị C", {phone: "213131231", email: "c@hotmail.com"});
+        displayContacts();
     </script>
 </body>
 
