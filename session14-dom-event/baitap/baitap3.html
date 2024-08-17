@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 3</title>
+    <style>
+        button {
+            padding: 20px;
+            border-radius: 6px;
+            background-color: #80c2fe;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>This text is optional</h1>
+    <button type="button" onclick="hideText()">Press to say hide text</button>
+    <script>
+        function hideText() {
+            document.getElementsByTagName("h1")[0].textContent = "Text after change";
+        }
+    </script>
+</body>
+</html>

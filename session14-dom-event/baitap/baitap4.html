@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 4</title>
+    <style>
+        button {
+            padding: 20px;
+            border-radius: 6px;
+            background-color: #80c2fe;
+            border: none;
+            cursor: pointer;
+        }
+        .active {
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>This text is optional</h1>
+    <button type="button" onclick="styleChange()">Press to say hide text</button>
+    <script>
+        function styleChange() {
+            document.getElementsByTagName("h1")[0].setAttribute("class", "active");
+        }
+    </script>
+</body>
+</html>

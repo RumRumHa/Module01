@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập 10</title>
+</head>
+
+<body>
+    <div id="bai10">
+        <p>Văn bản hiển thị <span style="visibility: hidden">bị ẩn</span> ở đây.</p>
+    </div>
+    <!--
+        Sự khác biệt của 3 thuộc tính innerText, textContent và innerHTML
+            - innerText: chỉ lấy nội dung có thể nhìn thấy trên trình duyệt 
+            của 1 phần tử mà không lấy thẻ HTML, nghĩa là không lấy các văn 
+            bản có các thuộc tính display: none và visibility: hidden và sẽ 
+            chậm hơn so với textContent
+            - textContent: lấy toàn bộ nội dung văn bản kể cả văn bản không 
+            nhìn thấy mà không lấy thẻ HTML, tốc độ nhanh
+            - innerHTML: trả về thẻ HTML và văn bản bển trong
+    -->
+    <script>
+        console.log(document.getElementById("bai10").innerText);
+        // "Văn bản hiển thị ở đây."
+        console.log(document.getElementById("bai10").textContent);
+        // "Văn bản hiển thị bị ẩn ở đây"
+        console.log(document.getElementById("bai10").innerHTML); 
+        //<p>Văn bản hiển thị <span style="visibility: hidden">bị ẩn</span> ở đây.</p>
+    </script>
+</body>
+
+</html>

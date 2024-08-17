@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 6</title>
+    <style>
+        button {
+            background-color: #65d768;
+            padding: 10px 26px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        input {
+            border-radius: 10px;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="inputText">
+    <button type="button" onclick="addListItem()">add item</button>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 123</li>
+    </ul>
+    <script>
+        function addListItem() {
+            let li = document.createElement("li");
+            li.textContent = document.getElementById("inputText").value;
+            let ul = document.getElementsByTagName("ul")[0];
+            ul.appendChild(li);
+            document.getElementById("inputText").value = '';
+        }
+    </script>
+</body>
+</html>

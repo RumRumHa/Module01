@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 5</title>
+</head>
+<body>
+    <script>
+        let names = ["Nguyễn Văn A", "Vũ Thị B", "Nguyễn Minh C"];
+        let ul = document.createElement("ul");
+        for (let i = 0; i < names.length; i++) {
+            let li = document.createElement("li");
+            li.textContent = names[i];
+            ul.appendChild(li);
+        }
+        document.body.appendChild(ul);
+    </script>
+</body>
+</html>

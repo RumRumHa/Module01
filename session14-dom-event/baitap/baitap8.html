@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 8</title>
+    <style>
+        table,
+        td {
+            border: 1px solid #000;
+        }
+
+        .btn {
+            background-color: #65d768;
+            padding: 10px 26px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .dlt {
+            background-color: red;
+            color: #fff;
+            border: none;
+            padding: 2px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tbody>
+            <tr>
+                <td>Cell 1 row 1</td>
+                <td>Cell 2 row 1</td>
+                <td>Cell 3 row 1</td>
+                <td><button class="dlt" onclick="this.parentNode.parentNode.remove()">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn" onclick="addTable()">add row</button>
+    <script>
+        let rowCount = 2;
+        function addTable() {
+            let tr = document.createElement("tr");
+            for (let i = 0; i < 3; i++) {
+                let td = document.createElement("td");
+                td.textContent = `Cell ${i + 1} row ${rowCount}`;
+                tr.appendChild(td);
+            }
+
+            let dlt = document.createElement("td");
+            let deleteButton = document.createElement("button");
+            deleteButton.setAttribute("class", "dlt");
+            deleteButton.textContent = "Delete";
+            deleteButton.onclick = function () {
+                this.parentNode.parentNode.remove();
+            }
+            dlt.appendChild(deleteButton);
+            tr.appendChild(dlt);
+
+            document.getElementsByTagName("tbody")[0].appendChild(tr);
+            rowCount++;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 9</title>
+    <style>
+        button {
+            background-color: #65d768;
+            border: none;
+            border-radius: 1px;
+            padding: 2px 6px;
+            cursor: pointer;
+        }
+
+        .btn {
+            background-color: #65d768;
+            padding: 10px 26px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        input {
+            border-radius: 30px;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="inputText">
+    <button type="button" class="btn" onclick="editItem()">Edit item</button>
+    <ul>
+        <li><span>Nguyễn Văn A</span> <button type="button" class="editname" onclick="editName(this)">Edit</button></li>
+        <li><span>Vũ Thị B</span> <button type="button" class="editname" onclick="editName(this)">Edit</button></li>
+        <li><span>Nguyễn Minh C</span> <button type="button" class="editname" onclick="editName(this)">Edit</button>
+        </li>
+    </ul>
+
+    <script>
+        let currentSpan = null;
+        function editName(button) {
+            let text = document.getElementById("inputText");
+            currentSpan = button.parentElement.querySelector("span");
+            text.value = currentSpan.textContent;
+        }
+        function editItem() {
+            let text = document.getElementById("inputText");
+            if (currentSpan !== null) {
+                currentSpan.textContent = text.value;
+                currentSpan = null;
+                text.value = "";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
