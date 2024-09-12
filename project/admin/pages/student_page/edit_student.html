@@ -1,0 +1,104 @@
+<!-- modal edit student -->
+<div class="modal fade" id="modal-student-edit">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="modal-edit-text">Cập nhật sinh viên</div>
+                <form>
+                    <div class="row mb-3">
+                        <label for="modalCodeStudentEdit" class="col-sm-3 col-form-label">Mã sinh viên
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="modalCodeStudentEdit" style="cursor: not-allowed;" disabled>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalNameStudentEdit" class="col-sm-3 col-form-label">Tên sinh viên
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="modalNameStudentEdit" placeholder="Nhập vào tên sinh viên">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalYearOfBirthEdit" class="col-sm-3 col-form-label">Năm sinh
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="modalYearOfBirthEdit" placeholder="Nhập vào năm sinh sinh viên">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalAddressStudentEdit" class="col-sm-3 col-form-label">Địa chỉ
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="modalAddressStudentEdit" placeholder="Nhập vào địa chỉ">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalEmailStudentEdit" class="col-sm-3 col-form-label">Email
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" id="modalEmailStudentEdit" placeholder="Nhập vào email">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalPhoneStudentEdit" class="col-sm-3 col-form-label">Số điện thoại
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="tel" class="form-control" id="modalPhoneStudentEdit" placeholder="Nhập vào số điện thoại">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label">Giới tính</label>
+                        <div class="modal-student-gender col-sm-9">
+                            <input type="radio" class="btn-check" name="options-outlined-gender-edit" id="maleEdit"
+                                autocomplete="off" checked>
+                            <label class="btn btn-outline-dark col-sm-3" for="maleEdit">Nam</label>
+                            <input type="radio" class="btn-check" name="options-outlined-gender-edit" id="femaleEdit"
+                                autocomplete="off">
+                            <label class="btn btn-outline-dark col-sm-3" for="femaleEdit">Nữ</label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label">Trạng thái</label>
+                        <div class="modal-student-status col-sm-9">
+                            <input type="radio" class="btn-check" name="options-outlined-status-edit" id="reserveEdit"
+                                autocomplete="off">
+                            <label class="btn btn-outline-dark col-sm-2" style="line-height: 45px;" for="reserveEdit">Bảo lưu</label>
+                            <input type="radio" class="btn-check" name="options-outlined-status-edit" id="waitingClassEdit"
+                                autocomplete="off" checked>
+                            <label class="btn btn-outline-dark col-sm-2" for="waitingClassEdit">Chờ lớp</label>
+                            <input type="radio" class="btn-check" name="options-outlined-status-edit" id="studyingEdit"
+                                autocomplete="off">
+                            <label class="btn btn-outline-dark col-sm-2" for="studyingEdit">Đang học</label>
+                            <input type="radio" class="btn-check" name="options-outlined-status-edit" id="suspendEdit"
+                                autocomplete="off">
+                            <label class="btn btn-outline-dark col-sm-2" for="suspendEdit">Đình chỉ</label>
+                            <input type="radio" class="btn-check" name="options-outlined-status-edit" id="graduateEdit"
+                                autocomplete="off">
+                            <label class="btn btn-outline-dark col-sm-2" for="graduateEdit">Tốt nghiệp</label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalChooseClassEdit" class="col-sm-3 col-form-label">Lớp học</label>
+                        <div class="col-sm-6">
+                            <select id="modalChooseClassEdit" class="form-select">
+                                <option value="chooseClass" disabled>Chọn lớp học</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" id="updateButton" class="btn btn-success col-sm-3">Cập nhật</button>
+                <button type="button" class="btn btn-danger col-sm-3" data-bs-dismiss="modal">Đóng</button>
+            </div>
+
+        </div>
+    </div>
+</div>

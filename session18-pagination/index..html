@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+    <style>
+        .pagination {
+            display: flex;
+            gap: 20px;
+        }
+
+        .list-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        ul li {
+            list-style: none;
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: black;
+            color: white;
+        }
+
+        .disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="list-item">
+
+    </ul>
+    <ul class="pagination">
+        <!-- <li><span>pre</span></li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li><span>next</span></li> -->
+    </ul>
+    <script>
+        /*
+            Tiến hành phân trang
+            B1: số phần tử trên 1 trang
+                3 phần tử trên 1 trang
+            B2: xác định số trang
+            let pages = numbers.length/ elementsPage
+            Math.ceil(pages)    
+        */
+
+        let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+        let elementsPage = 3;
+        let totalPage = Math.ceil(numbers.length / elementsPage);
+        let currentPage = 1;
+        let start = 0;
+        let end = elementsPage;
+
+        //Khai báo function khi click vào từng trang
+        function pageNow(choosePage) {     
+            currentPage = choosePage;
+            updateStartEnd();
+            renderItem();
+            renderPage();
+        }
+
+        //Khai báo function đi tính toán start và end
+        function updateStartEnd() {
+            start = (currentPage - 1) * elementsPage;
+            end = currentPage * elementsPage;
+        }
+
+        //function hiển thị danh sách item
+        function renderItem() {
+            let html = "";
+            for (let i = start; i < end && i < numbers.length; i++) {
+                if (i >= start && i < end) {
+                    html += `<li>${numbers[i]}</li>`;
+                }
+            }
+            document.getElementsByClassName("list-item")[0].innerHTML = html;
+        }
+
+        //Viết function hiển thị số trang
+        function renderPage() {
+            let html = "";
+            html += `<li class="${currentPage === 1 ? 'disabled' : ''}" onClick="${currentPage > 1 ? `pageNow(${currentPage - 1})` : ''}">pre</li>`;
+            for (let i = 1; i <= totalPage; i++) {
+                html += `<li class="${i === currentPage ? 'active' : ''}" onClick="pageNow(${i})">${i}</li>`;
+            }
+            html += `<li class="${currentPage === totalPage ? 'disabled' : ''}" onClick="${currentPage < totalPage ? `pageNow(${currentPage + 1})` : ''}">next</li>`;
+            document.getElementsByClassName("pagination")[0].innerHTML = html;
+        }
+        renderItem();
+        renderPage();
+    </script>
+</body>
+
+</html>

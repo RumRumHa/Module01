@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+.logo {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+}
+.logo .header-logo {
+    width: 180px;
+    height: 40px; /* Đặt chiều cao để phần tử có thể hiển thị hình ảnh */
+    background-image: url('../asset/images/logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.logo .text-logo {
+    font-style: italic;
+    text-align: right;
+}
+.header-main {
+    flex: 7;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.header-login {
+    flex: 2;
+    text-align: right;
+}
+
+#main {
+    display: flex;
+    border-top: 1px solid #222222;
+    border-bottom: 1px solid #222222;
+}
+#main #main-controller {
+    flex: 1;
+}
+#main-controller .icon-controller {
+    text-align: center;
+}
+#main-controller .text-controller {
+    text-decoration: none;
+    color: #000;
+}
+#main-controller .pointer {
+    cursor: pointer;
+}
+#main-controller td.pointer.active {
+    background-color: #00ff2a;
+}
+#main-controller td.pointer.active:hover {
+    background-color: #00ff2abd;
+}
+#main #main-content {
+    flex: 3;
+    margin-left: 10%;
+}
+
+
+#footer {
+    text-align: center;
+}
+
+.modal-logout {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-left: 5%;
+}
+.model-confirm-logout {
+    padding-left: 5%;
+}
+td.edit {
+    text-align: center;
+    cursor: pointer;
+    background-color: #00B0F0 !important;
+    font-weight: bold;
+}
+td.edit:hover {
+    background-color: #00b0f0c0 !important;
+}
+td.delete {
+    text-align: center;
+    cursor: pointer;
+    background-color: #FF6D01 !important;
+    font-weight: bold;
+}
+td.delete:hover {
+    background-color: #ff6f01c4 !important;
+}

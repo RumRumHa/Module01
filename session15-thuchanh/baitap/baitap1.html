@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery with Scroll</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      /* Xóa cuộn ngang của trang */
+    }
+
+    .image-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .main-image img {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .thumbnail-gallery-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      overflow: hidden;
+    }
+
+    .thumbnail-gallery {
+      display: flex;
+      overflow-x: hidden;
+      /* Xóa thanh cuộn ngang */
+      overflow-y: hidden;
+      scroll-behavior: smooth;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .thumbnail {
+      flex: none;
+      width: 100px;
+      height: 75px;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.1);
+    }
+
+    .thumbnail.active {
+      border: 2px solid #007BFF;
+      transform: scale(1.1);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .arrow.left {
+      left: 0;
+    }
+
+    .arrow.right {
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="image-gallery">
+    <div class="main-image">
+      <img src="https://via.placeholder.com/800x450?text=Main+Image" alt="Main Image" id="mainImage">
+    </div>
+    <div class="thumbnail-gallery-wrapper">
+      <button class="arrow left" onclick="scrollGallery(-1)">&#10094;</button>
+      <div class="thumbnail-gallery" id="thumbnailGallery">
+        <!-- Thêm nhiều hình ảnh nhỏ ở đây -->
+        <img src="https://via.placeholder.com/100x75?text=Thumb+1" alt="Thumbnail 1" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+1')">
+        <img src="https://via.placeholder.com/100x75?text=Thumb+2" alt="Thumbnail 2" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+2')">
+        <img src="https://via.placeholder.com/100x75?text=Thumb+3" alt="Thumbnail 3" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+3')">
+        <img src="https://via.placeholder.com/100x75?text=Thumb+4" alt="Thumbnail 4" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+4')">
+        <img src="https://via.placeholder.com/100x75?text=Thumb+5" alt="Thumbnail 5" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+5')">
+        <img src="https://via.placeholder.com/100x75?text=Thumb+6" alt="Thumbnail 6" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+6')">
+        <img src="https://via.placeholder.com/100x75?text=Thumb+7" alt="Thumbnail 7" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+7')">
+        <img src="https://via.placeholder.com/100x75?text=Thumb+8" alt="Thumbnail 8" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+8')">
+        <img src="https://via.placeholder.com/100x75?text=Thumb+9" alt="Thumbnail 9" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+9')">
+        <img src="https://via.placeholder.com/100x75?text=Thumb+10" alt="Thumbnail 10" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+10')">
+        <img src="https://via.placeholder.com/100x75?text=Thumb+11" alt="Thumbnail 11" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+11')">
+        <img src="https://via.placeholder.com/100x75?text=Thumb+12" alt="Thumbnail 12" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+12')">
+        <img src="https://via.placeholder.com/100x75?text=Thumb+13" alt="Thumbnail 13" class="thumbnail"
+          onclick="changeImage(this, 'https://via.placeholder.com/800x450?text=Image+13')">
+        <!-- Thêm bao nhiêu hình tùy thích -->
+      </div>
+      <button class="arrow right" onclick="scrollGallery(1)">&#10095;</button>
+    </div>
+  </div>
+
+  <script>
+    function changeImage(element, imageSrc) {
+      // Đổi hình ảnh chính
+      document.getElementById("mainImage").src = imageSrc;
+
+      // Xóa class active khỏi các hình ảnh nhỏ
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      thumbnails.forEach(thumbnail => {
+        thumbnail.classList.remove('active');
+      });
+
+      // Thêm class active cho hình ảnh được chọn
+      element.classList.add('active');
+
+      // Cuộn gallery để thumbnail hiện tại ở vị trí đầu tiên
+      const thumbnailGallery = document.getElementById('thumbnailGallery');
+      const thumbnailPosition = element.offsetLeft;
+      thumbnailGallery.scrollTo({
+        left: thumbnailPosition - thumbnailGallery.offsetLeft - element.clientWidth - 10,
+        behavior: 'smooth'
+      });
+    }
+
+
+    function scrollGallery(direction) {
+      const thumbnailGallery = document.getElementById('thumbnailGallery');
+      const scrollAmount = thumbnailGallery.clientWidth / 2;
+      thumbnailGallery.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
+</body>
+
+</html>

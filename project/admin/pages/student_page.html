@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rikkei academy | Để nông dân biết code</title>
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/student_page.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div id="header"></div>
+
+        <div id="main" class="py-4">
+            <div id="main-controller">
+                <table class="table table-bordered border-primary">
+                    <tbody>
+                        <tr id="home-page">
+                            <td class="icon-controller"><i class="fa-solid fa-house"></i></td>
+                            <td class="pointer"><a href="../pages/home_page.html" class="text-controller">Bảng điều
+                                    khiển</a></td>
+                        </tr>
+                        <tr id="course-page">
+                            <td class="icon-controller"><i class="fa-solid fa-school"></i></td>
+                            <td class="pointer"><a href="../pages/course_page.html" class="text-controller">Quản lý khóa
+                                    học</a></td>
+                        </tr>
+                        <tr id="class-page">
+                            <td class="icon-controller"><i class="fa-solid fa-graduation-cap"></i></td>
+                            <td class="pointer"><a href="../pages/class_page.html" class="text-controller">Quản lý lớp
+                                    học</a></td>
+                        </tr>
+                        <tr id="student-page">
+                            <td class="icon-controller"><i class="fa-solid fa-users"></i></td>
+                            <td class="pointer active"><a href="../pages/student_page.html" class="text-controller">Quản
+                                    lý sinh viên</a></td>
+                        </tr>
+                        <tr id="account-page">
+                            <td class="icon-controller"><i class="fa-solid fa-user"></i></td>
+                            <td class="pointer"><a href="../pages/account_page.html" class="text-controller">Quản lý tài
+                                    khoản</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="main-content">
+                <p class="main-content-text">QUẢN LÝ SINH VIÊN</p>
+                <div class="main-student-header my-4">
+                    <button type="button" class="main-student-add btn btn-success me-4" data-bs-toggle="modal"
+                        data-bs-target="#modal-student-add">Thêm mới</button>
+                    <div class="main-student-search input-group me-4">
+                        <input type="text" class="form-control" id="searchInputStudent" placeholder="Nhập sinh viên tìm kiếm">
+                        <button type="button" class="btn btn-secondary" id="searchButtonStudent">Tìm kiếm</button>
+                    </div>
+                    <div class="main-student-sort">
+                        <span class="text-sort">Sắp xếp</span>
+                        <select class="form-select">
+                            <option value="nameStudent" selected>Theo tên sinh viên</option>
+                            <option value="addressStudent">Theo địa chỉ</option>
+                            <option value="statusStudent">Theo trạng thái</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="main-student-content">
+                    <table id="studentsTable" class="table table-bordered border-secondary">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã SV</th>
+                                <th>Tên SV</th>
+                                <th>Năm sinh</th>
+                                <th>Địa chỉ</th>
+                                <th>Email</th>
+                                <th>SĐT</th>
+                                <th>Giới tính</th>
+                                <th>Trạng thái</th>
+                                <th>Lớp học</th>
+                                <th colspan="2">Hoạt động</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="main-student-pagination">
+                    <ul class="pagination"></ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+        <div id="add_student">
+            <!-- modal add student -->
+            <div class="modal fade" id="modal-student-add">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="modal-add-text">Thêm mới sinh viên</div>
+                            <form>
+                                <div class="row mb-3">
+                                    <label for="modalCodeStudent" class="col-sm-3 col-form-label">Mã sinh viên
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="modalCodeStudent" placeholder="Nhập vào mã sinh viên">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalNameStudent" class="col-sm-3 col-form-label">Tên sinh viên
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="modalNameStudent" placeholder="Nhập vào tên sinh viên">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalYearOfBirth" class="col-sm-3 col-form-label">Năm sinh
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="number" class="form-control" id="modalYearOfBirth" placeholder="Nhập vào năm sinh sinh viên">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalAddressStudent" class="col-sm-3 col-form-label">Địa chỉ
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="modalAddressStudent" placeholder="Nhập vào địa chỉ">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalEmailStudent" class="col-sm-3 col-form-label">Email
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control" id="modalEmailStudent" placeholder="Nhập vào email">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalPhoneStudent" class="col-sm-3 col-form-label">Số điện thoại
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="tel" class="form-control" id="modalPhoneStudent" placeholder="Nhập vào số điện thoại">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-sm-3 col-form-label">Giới tính</label>
+                                    <div class="modal-student-gender col-sm-9">
+                                        <input type="radio" class="btn-check" name="options-outlined-gender" id="male"
+                                            autocomplete="off" checked>
+                                        <label class="btn btn-outline-dark col-sm-3" for="male">Nam</label>
+                                        <input type="radio" class="btn-check" name="options-outlined-gender" id="female"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark col-sm-3" for="female">Nữ</label>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-sm-3 col-form-label">Trạng thái</label>
+                                    <div class="modal-student-status col-sm-9">
+                                        <input type="radio" class="btn-check" name="options-outlined-status" id="reserve"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark col-sm-2" style="line-height: 45px;" for="reserve">Bảo lưu</label>
+                                        <input type="radio" class="btn-check" name="options-outlined-status" id="waitingClass"
+                                            autocomplete="off" checked>
+                                        <label class="btn btn-outline-dark col-sm-2" for="waitingClass">Chờ lớp</label>
+                                        <input type="radio" class="btn-check" name="options-outlined-status" id="studying"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark col-sm-2" for="studying">Đang học</label>
+                                        <input type="radio" class="btn-check" name="options-outlined-status" id="suspend"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark col-sm-2" for="suspend">Đình chỉ</label>
+                                        <input type="radio" class="btn-check" name="options-outlined-status" id="graduate"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark col-sm-2" for="graduate">Tốt nghiệp</label>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalChooseClass" class="col-sm-3 col-form-label">Lớp học</label>
+                                    <div class="col-sm-6">
+                                        <select id="modalChooseClass" class="form-select">
+                                            <option value="chooseClass" selected disabled>Chọn lớp học</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success col-sm-3" onclick="addStudent()">Thêm mới</button>
+                            <button type="button" class="btn btn-danger col-sm-3" data-bs-dismiss="modal">Đóng</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="edit_student"></div>
+        <div id="delete_student"></div>
+        <div id="logout"></div>
+
+        <div id="footer" class="pt-4"></div>
+
+        <script src="../js/index.js"></script>
+        <script src="../js/students.js"></script>
+        <script src="../js/student_page/add_student.js"></script>
+        <script src="../js/student_page/edit_student.js"></script>
+        <script src="../js/student_page/delete_student.js"></script>
+        <script src="https://kit.fontawesome.com/4d71ae5ae0.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

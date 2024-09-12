@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rikkei academy | Để nông dân biết code</title>
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/course_page.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div id="header"></div>
+
+        <div id="main" class="py-4">
+            <div id="main-controller">
+                <table class="table table-bordered border-primary">
+                    <tbody>
+                        <tr id="home-page">
+                            <td class="icon-controller"><i class="fa-solid fa-house"></i></td>
+                            <td class="pointer"><a href="../pages/home_page.html" class="text-controller">Bảng điều
+                                    khiển</a></td>
+                        </tr>
+                        <tr id="course-page">
+                            <td class="icon-controller"><i class="fa-solid fa-school"></i></td>
+                            <td class="pointer active"><a href="../pages/course_page.html" class="text-controller">Quản lý khóa
+                                    học</a></td>
+                        </tr>
+                        <tr id="class-page">
+                            <td class="icon-controller"><i class="fa-solid fa-graduation-cap"></i></td>
+                            <td class="pointer"><a href="../pages/class_page.html" class="text-controller">Quản lý lớp
+                                    học</a></td>
+                        </tr>
+                        <tr id="student-page">
+                            <td class="icon-controller"><i class="fa-solid fa-users"></i></td>
+                            <td class="pointer"><a href="../pages/student_page.html" class="text-controller">Quản
+                                    lý sinh viên</a></td>
+                        </tr>
+                        <tr id="account-page">
+                            <td class="icon-controller"><i class="fa-solid fa-user"></i></td>
+                            <td class="pointer"><a href="../pages/account_page.html" class="text-controller">Quản
+                                    lý tài
+                                    khoản</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="main-content">
+                <p class="main-content-text">QUẢN LÝ KHÓA HỌC</p>
+                <div class="main-course-header my-4">
+                    <button type="button" class="main-course-add btn btn-success me-4" data-bs-toggle="modal"
+                        data-bs-target="#modal-course-add">Thêm mới</button>
+                    <div class="main-course-search input-group me-4">
+                        <input type="text" class="form-control" id="searchInputCourse"
+                            placeholder="Nhập từ khóa tìm kiếm">
+                        <button type="button" class="btn btn-secondary" id="searchButtonCourse">Tìm kiếm</button>
+                    </div>
+                    <div class="main-course-sort">
+                        <span class="text-sort">Sắp xếp</span>
+                        <select class="form-select">
+                            <option value="nameCourseAsc" selected>Tên khóa học tăng dần</option>
+                            <option value="nameCourseDesc">Tên khóa học giảm dần</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="main-course-content">
+                    <table id="coursesTable" class="table table-bordered border-secondary">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã khóa học</th>
+                                <th>Tên khóa học</th>
+                                <th>Thời gian (giờ)</th>
+                                <th>Trạng thái</th>
+                                <th colspan="2">Hoạt động</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="main-course-pagination">
+                    <ul class="pagination"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="add_course">
+            <!-- modal add course -->
+            <div class="modal fade" id="modal-course-add">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="modal-add-text">Thêm mới khóa học</div>
+                            <form>
+                                <div class="row mb-3">
+                                    <label for="modalCodeCourse" class="col-sm-3 col-form-label">Mã khóa học
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="modalCodeCourse" placeholder="Nhập mã khóa học">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalNameCourse" class="col-sm-3 col-form-label">Tên khóa học
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="modalNameCourse" placeholder="Nhập tên khóa học">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalTimeCourse" class="col-sm-3 col-form-label">Thời gian
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="number" class="form-control" id="modalTimeCourse" placeholder="Nhập thời gian khóa học">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-sm-3 col-form-label">Trạng thái</label>
+                                    <div class="modal-course-status col-sm-9">
+                                        <input type="radio" class="btn-check" name="options-outlined" id="activate"
+                                            autocomplete="off" checked>
+                                        <label class="btn btn-outline-dark col-sm-4" for="activate">Hoạt động</label>
+                                        <input type="radio" class="btn-check" name="options-outlined" id="deactivate"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark col-sm-4" for="deactivate">Không hoạt
+                                            động</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success col-sm-3" onclick="addCourse()">Thêm mới</button>
+                            <button type="button" class="btn btn-danger col-sm-3" data-bs-dismiss="modal">Đóng</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="edit_course"></div>
+        <div id="delete_course"></div>
+        <div id="logout"></div>
+
+        <div id="footer" class="pt-4"></div>
+
+        <script src="../js/index.js"></script>
+        <script src="../js/courses.js"></script>
+        <script src="../js/course_page/add_course.js"></script>
+        <script src="../js/course_page/edit_course.js"></script>
+        <script src="../js/course_page/delete_course.js"></script>
+        <script src="https://kit.fontawesome.com/4d71ae5ae0.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+            crossorigin="anonymous"></script>
+    </div>
+</body>
+
+</html>

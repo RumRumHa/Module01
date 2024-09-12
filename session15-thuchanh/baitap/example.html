@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1</title>
+    <style>
+        button {
+            background-color: #65d768;
+            border: none;
+            border-radius: 1px;
+            padding: 2px 6px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        #btn {
+            background-color: #65d768;
+            padding: 10px 26px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        input {
+            border-radius: 30px;
+            height: 25px;
+        }
+        li {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="inputText">
+    <button type="button" id="btn" onclick="addOrEditItem()">Add item</button>
+    <ul>
+        <li>
+            <span>Nguyễn Văn A</span> 
+            <button type="button" class="editname" onclick="editName(this)">Edit</button>
+            <button class="dlt" onclick="deleteText(this)">Delete</button>
+        </li>
+        <li>
+            <span>Vũ Thị B</span> 
+            <button type="button" class="editname" onclick="editName(this)">Edit</button>
+            <button class="dlt" onclick="deleteText(this)">Delete</button>
+        </li>
+        <li>
+            <span>Nguyễn Minh C</span> 
+            <button type="button" class="editname" onclick="editName(this)">Edit</button>
+            <button class="dlt" onclick="deleteText(this)">Delete</button>
+        </li>
+    </ul>
+
+    <script>
+        let currentSpan = null;
+        function editName(button) {
+            let text = document.getElementById("inputText");
+            currentSpan = button.parentElement.querySelector("span");
+            let currentButton = document.getElementById("btn");
+            text.value = currentSpan.textContent;
+            text.focus();
+            if (text.value !== '') {
+                currentButton.textContent = "Edit item";
+            }
+        }
+        function addOrEditItem() {
+            let text = document.getElementById("inputText");
+            let currentButton = document.getElementById("btn");
+            if (currentSpan !== null) {
+                currentSpan.textContent = text.value;
+                currentSpan = null;
+                text.value = "";
+                currentButton.textContent = "Add item";
+            } else if (text.value !== '') {
+                let ul = document.querySelector("ul");
+                let li = document.createElement("li");
+                li.innerHTML = `<span>${text.value}</span> 
+                                <button type="button" class="editname" onclick="editName(this)">Edit</button> 
+                                <button class="dlt" onclick="deleteText(this)">Delete</button>`;
+                ul.appendChild(li);
+                text.value = '';
+            }
+        } 
+        document.addEventListener('keydown', (event) => {
+            if (event.key == "Enter") {
+                addOrEditItem();
+            }
+        });
+        function deleteText(deleteButton) {
+            let confirmDelete = confirm("Bạn có chắc chắn muốn xóa không?");
+            if (confirmDelete) {
+                deleteButton.parentNode.remove();
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rikkei academy | Để nông dân biết code</title>
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/class_page.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div id="header"></div>
+
+        <div id="main" class="py-4">
+            <div id="main-controller">
+                <table class="table table-bordered border-primary">
+                    <tbody>
+                        <tr id="home-page">
+                            <td class="icon-controller"><i class="fa-solid fa-house"></i></td>
+                            <td class="pointer"><a href="../pages/home_page.html" class="text-controller">Bảng điều
+                                    khiển</a></td>
+                        </tr>
+                        <tr id="course-page">
+                            <td class="icon-controller"><i class="fa-solid fa-school"></i></td>
+                            <td class="pointer"><a href="../pages/course_page.html" class="text-controller">Quản lý khóa
+                                    học</a></td>
+                        </tr>
+                        <tr id="class-page">
+                            <td class="icon-controller"><i class="fa-solid fa-graduation-cap"></i></td>
+                            <td class="pointer active"><a href="../pages/class_page.html" class="text-controller">Quản lý lớp
+                                    học</a></td>
+                        </tr>
+                        <tr id="student-page">
+                            <td class="icon-controller"><i class="fa-solid fa-users"></i></td>
+                            <td class="pointer"><a href="../pages/student_page.html" class="text-controller">Quản
+                                    lý sinh viên</a></td>
+                        </tr>
+                        <tr id="account-page">
+                            <td class="icon-controller"><i class="fa-solid fa-user"></i></td>
+                            <td class="pointer"><a href="../pages/account_page.html" class="text-controller">Quản
+                                    lý tài
+                                    khoản</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="main-content">
+                <p class="main-content-text">QUẢN LÝ LỚP HỌC</p>
+                <div class="main-class-header my-4">
+                    <button type="button" class="main-class-add btn btn-success me-4" data-bs-toggle="modal"
+                        data-bs-target="#modal-class-add">Thêm mới</button>
+                    <div class="main-class-search input-group me-4">
+                        <input type="text" class="form-control" id="searchInputClass" placeholder="Nhập lớp học tìm kiếm">
+                        <button type="button" class="btn btn-secondary" id="searchButtonClass">Tìm kiếm</button>
+                    </div>
+                    <div class="main-class-sort">
+                        <span class="text-sort">Sắp xếp</span>
+                        <select class="form-select">
+                            <option value="nameClassAsc" selected>Tên lớp học tăng dần</option>
+                            <option value="nameClassDesc">Tên lớp học giảm dần</option>
+                            <option value="statusClassAsc">Trạng thái tăng dần</option>
+                            <option value="statusClassDesc">Trạng thái giảm dần</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="main-class-content">
+                    <table id="classesTable" class="table table-bordered border-secondary">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã lớp</th>
+                                <th>Tên lớp</th>
+                                <th>Giảng viên</th>
+                                <th>Mô tả</th>
+                                <th>Sĩ số</th>
+                                <th>Trạng thái</th>
+                                <th>Khóa học</th>
+                                <th colspan="2">Hoạt động</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="main-class-pagination">
+                    <ul class="pagination"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="add-class">
+            <!-- modal add class -->
+            <div class="modal fade" id="modal-class-add" tabindex="-1" aria-labelledby="modal-class-add-label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="modal-add-text">Thêm mới lớp học</div>
+                            <form>
+                                <div class="row mb-3">
+                                    <label for="modalCodeClass" class="col-sm-3 col-form-label">Mã lớp học
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="modalCodeClass" placeholder="Nhập vào mã lớp học">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalNameClass" class="col-sm-3 col-form-label">Tên lớp học
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="modalNameClass" placeholder="Nhập vào tên lớp học">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalTeacherClass" class="col-sm-3 col-form-label">Giảng viên
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="modalTeacherClass" placeholder="Nhập vào giảng viên dạy lớp">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalQuantityClass" class="col-sm-3 col-form-label">Sĩ số
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="number" class="form-control" id="modalQuantityClass" placeholder="Nhập vào sĩ số lớp">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalDescriptionClass" class="col-sm-3 col-form-label">Mô tả 
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="modalDescriptionClass" placeholder="Nhập vào mô tả của lớp">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label class="col-sm-3 col-form-label">Trạng thái</label>
+                                    <div class="modal-class-status col-sm-9">
+                                        <input type="radio" class="btn-check" name="options-outlined-class" id="activate"
+                                            autocomplete="off" checked>
+                                        <label class="btn btn-outline-dark col-sm-3" for="activate">Hoạt động</label>
+                                        <input type="radio" class="btn-check" name="options-outlined-class" id="waiting"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark col-sm-3" for="waiting">Chờ lớp</label>
+                                        <input type="radio" class="btn-check" name="options-outlined-class" id="ended"
+                                            autocomplete="off">
+                                        <label class="btn btn-outline-dark col-sm-3" for="ended">Kết thúc</label>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="modalChooseCourse" class="col-sm-3 col-form-label">Khóa học
+                                        <span class="modal-text-require">(*)</span></label>
+                                    <div class="col-sm-6">
+                                        <select id="modalChooseCourse" class="form-select">
+                                            <option value="chooseCourse" selected disabled>Chọn khóa học</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" id="addClassBtn" class="btn btn-success col-sm-3" onclick="addClass()">Thêm mới</button>
+                            <button type="button" class="btn btn-danger col-sm-3" data-bs-dismiss="modal">Đóng</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="edit_class"></div>
+        <div id="delete_class"></div>
+        <div id="logout"></div>
+
+        <div id="footer" class="pt-4"></div>
+
+        <script src="../js/index.js"></script>
+        <script src="../js/class.js"></script>
+        <script src="../js/class_page/add_class.js"></script>
+        <script src="../js/class_page/edit_class.js"></script>
+        <script src="../js/class_page/delete_class.js"></script>
+        <script src="https://kit.fontawesome.com/4d71ae5ae0.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+            integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+            crossorigin="anonymous"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const modalAddClass = document.getElementById('modal-class-add');
+                console.log(modalAddClass); // Kiểm tra nếu modalAddClass không phải là null
+    
+                // Gán sự kiện cho modal
+                if (modalAddClass) {
+                    modalAddClass.addEventListener('show.bs.modal', function () {
+                        console.log('Modal is shown');
+                    });
+    
+                    modalAddClass.addEventListener('hidden.bs.modal', function () {
+                        console.log('Modal is hidden');
+                    });
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>

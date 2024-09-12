@@ -1,0 +1,81 @@
+<!-- modal edit student -->
+<div class="modal fade" id="modal-class-edit">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="modal-edit-text">Cập nhật lớp học</div>
+                <form>
+                    <div class="row mb-3">
+                        <label for="modalCodeClassEdit" class="col-sm-3 col-form-label">Mã lớp học
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="modalCodeClassEdit" disabled style="cursor: not-allowed;">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalNameClassEdit" class="col-sm-3 col-form-label">Tên lớp học
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="modalNameClassEdit" placeholder="Nhập vào tên lớp học">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalTeacherClassEdit" class="col-sm-3 col-form-label">Giảng viên
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="modalTeacherClassEdit" placeholder="Nhập vào giảng viên dạy lớp">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalQuantityClassEdit" class="col-sm-3 col-form-label">Sĩ số
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="modalQuantityClassEdit" placeholder="Nhập vào sĩ số lớp">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalDescriptionClassEdit" class="col-sm-3 col-form-label">Mô tả
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="modalDescriptionClassEdit" placeholder="Nhập nhập vào mô tả của lớp">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label">Trạng thái</label>
+                        <div class="modal-class-status col-sm-9">
+                            <input type="radio" class="btn-check" name="options-outlined-edit" id="activateEdit"
+                                autocomplete="off" checked>
+                            <label class="btn btn-outline-dark col-sm-3" for="activateEdit">Hoạt động</label>
+                            <input type="radio" class="btn-check" name="options-outlined-edit" id="waitingEdit"
+                                autocomplete="off">
+                            <label class="btn btn-outline-dark col-sm-3" for="waitingEdit">Chờ lớp</label>
+                            <input type="radio" class="btn-check" name="options-outlined-edit" id="endedEdit"
+                                autocomplete="off">
+                            <label class="btn btn-outline-dark col-sm-3" for="endedEdit">Kết thúc</label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalChooseCourseEdit" class="col-sm-3 col-form-label">Khóa học
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-6">
+                            <select id="modalChooseCourseEdit" class="form-select">
+                                <option value="chooseCourse" disabled>Chọn khóa học</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" id="updateButton" class="btn btn-success col-sm-3">Cập nhật</button>
+                <button type="button" class="btn btn-danger col-sm-3" data-bs-dismiss="modal">Đóng</button>
+            </div>
+
+        </div>
+    </div>
+</div>

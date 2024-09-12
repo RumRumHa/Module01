@@ -1,0 +1,52 @@
+.main-content-text {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.main-account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-account-sort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 4;
+}
+.main-account-search {
+    display: flex;
+    flex: 7;
+}
+.main-account-sort .text-sort {
+    flex: 1;
+}
+.main-account-sort .form-select {
+    flex: 2;
+}
+.main-account-content thead {
+    background-color: #8CB5F9;
+    text-align: center;
+}
+.main-account-content .center {
+    text-align: center;
+}
+.main-account-pagination .pagination {
+    justify-content: flex-end;
+}
+.main-account-pagination .pagination li {
+    --bs-pagination-color: #000;
+    /* --bs-pagination-active-bg: */
+}
+.modal-footer {
+    justify-content: center !important;
+}
+.modal-lock-text, .modal-unlock-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-left: 5%;
+}
+.model-confirm-lock, .model-confirm-unlock {
+    padding-left: 5%;
+}

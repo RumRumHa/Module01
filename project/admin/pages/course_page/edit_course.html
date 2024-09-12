@@ -1,0 +1,56 @@
+<!-- modal edit course -->
+<div class="modal fade" id="modal-course-edit">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="modal-edit-text">Cập nhật khóa học</div>
+                <form>
+                    <div class="row mb-3">
+                        <label for="modalCodeCourseEdit" class="col-sm-3 col-form-label">Mã khóa học
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="modalCodeCourseEdit" disabled style="cursor: not-allowed;">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalNameCourseEdit" class="col-sm-3 col-form-label">Tên khóa học
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="modalNameCourseEdit" placeholder="Nhập tên khóa học">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="modalTimeCourseEdit" class="col-sm-3 col-form-label">Thời gian
+                            <span class="modal-text-require">(*)</span></label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" id="modalTimeCourseEdit" placeholder="Nhập thời gian khóa học">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-3 col-form-label">Trạng thái</label>
+                        <div class="modal-course-status col-sm-9">
+                            <input type="radio" class="btn-check" name="options-outlined-edit" id="activateEdit"
+                                autocomplete="off" checked>
+                            <label class="btn btn-outline-dark col-sm-4" for="activateEdit">Hoạt động</label>
+                            <input type="radio" class="btn-check" name="options-outlined-edit" id="deactivateEdit"
+                                autocomplete="off">
+                            <label class="btn btn-outline-dark col-sm-4" for="deactivateEdit">Không hoạt
+                                động</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" id="updateButton" class="btn btn-success col-sm-3">Cập nhật</button>
+                <button type="button" class="btn btn-danger col-sm-3" data-bs-dismiss="modal">Đóng</button>
+            </div>
+
+        </div>
+    </div>
+</div>

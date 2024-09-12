@@ -1,0 +1,67 @@
+.main-content-text {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.main-student-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-student-add {
+    flex: 1.2;
+}
+.main-student-sort {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 3.8;
+}
+.main-student-search {
+    display: flex;
+    flex: 6;
+}
+.main-student-sort .text-sort {
+    flex: 1;
+}
+.main-student-sort .form-select {
+    flex: 2;
+}
+.main-student-content thead {
+    background-color: #8CB5F9;
+    text-align: center;
+}
+.main-student-content .center {
+    text-align: center;
+}
+.main-student-pagination .pagination {
+    justify-content: flex-end;
+}
+.main-student-pagination .pagination li {
+    --bs-pagination-color: #000;
+    /* --bs-pagination-active-bg: */
+}
+.modal-dialog {
+    --bs-modal-width: 700px;
+}
+.modal-footer {
+    justify-content: center !important;
+}
+.modal-text-require {
+    color: red;
+}
+.modal-add-text, .modal-edit-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.modal-delete-text {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-left: 5%;
+}
+.model-confirm-delete {
+    padding-left: 5%;
+}
